@@ -1,5 +1,6 @@
 Sub SearchTerm()
-Const strTest = "SearchTerm"
+Dim strTest As String
+strTest = InputBox("Search for the word and create seperate sheet", "search and filter rows")
 Dim wsSource As Worksheet
 Dim wsDest As Worksheet
 Dim NoRows As Long
@@ -37,6 +38,8 @@ Dim rngFind As Range
     wsDest.Columns("I:I").Select
     Selection.Delete Shift:=xlToLeft
     wsDest.Columns("B:B").EntireColumn.AutoFit
+    wsDest.Cells.Select
+    wsDest.Cells.EntireRow.AutoFit
     
+    wsDest.Name = strTest & " " & wsSource.Name
 End Sub
-
