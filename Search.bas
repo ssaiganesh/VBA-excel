@@ -15,14 +15,9 @@ Dim rngFind As Range
     DestNoRows = 3
     Set wsDest = ActiveWorkbook.Worksheets.Add
     
-    wsSource.Range("A3:I3").Copy
+    wsSource.Range("A3:I4").Copy
     wsDest.Activate
     Range("A1").Select
-    wsDest.Paste
-    wsSource.Activate
-    wsSource.Range("A4:I4").Copy
-    wsDest.Activate
-    Range("A2").Select
     wsDest.Paste
     
     For I = 1 To NoRows
